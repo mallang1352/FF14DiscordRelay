@@ -146,6 +146,25 @@ Webhook 설정에서 기존 Webhook을 삭제하고 새로 만들어야 합니�
 포함하지 마세요. Release ZIP과 SHA256 해시를 함께 제공하는 방식을
 권장합니다.
 
+### 법적/약관/개인정보 주의
+
+이 프로그램은 Square Enix, FINAL FANTASY XIV, Discord, ACT와 공식적으로
+관련이 없는 비공식 로컬 유틸리티입니다. 사용자는 FINAL FANTASY XIV,
+Discord, ACT 및 관련 서비스의 이용약관과 운영정책을 직접 확인하고
+사용해야 합니다.
+
+이 프로그램은 FFXIV 게임 클라이언트, Discord 클라이언트, 네트워크 패킷,
+게임 메모리를 후킹하거나 조작하지 않습니다. 로컬 PC에 생성된 ACT 로그
+파일을 읽고, 사용자가 입력한 Discord Webhook으로 메시지를 전송합니다.
+
+다른 사용자의 채팅 내용을 동의 없이 외부 Discord 채널로 중계하지 마세요.
+기본 설정은 본인이 작성한 메시지만 전송하도록 구성되어 있으며, 이 기본값을
+유지하는 것을 권장합니다.
+
+Webhook URL은 채널에 메시지를 보낼 수 있는 비밀 주소입니다. GitHub,
+Discord, 스크린샷, 로그 파일 등에 공개하지 마세요. Webhook URL이 노출된
+경우 Discord에서 해당 Webhook을 삭제하고 새로 생성해야 합니다.
+
 ## Features
 
 - Reads selected ACT FFXIV chat channels.

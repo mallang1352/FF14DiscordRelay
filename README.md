@@ -9,6 +9,31 @@ provided by the user.
 
 ## 한국어 사용 설명
 
+### 다운로드
+
+GitHub 저장소의 `Releases` 페이지에서 최신 버전 ZIP 파일을 다운로드하세요.
+
+현재 배포 버전:
+
+```text
+v1.0.8
+```
+
+권장 다운로드 파일:
+
+```text
+FF14DiscordRelay-v1.0.8-win-x64.zip
+```
+
+SHA256:
+
+```text
+F48918DFD854FE360C69A28A60E4575C7334CEDEDE3355CFAC605118926BB357
+```
+
+ZIP 파일을 받은 뒤 압축을 풀고, 폴더 안의 `FF14DiscordRelay.exe`를
+실행하세요. exe 파일만 따로 꺼내서 실행하지 마세요.
+
 ### 준비물
 
 - Windows x64 PC

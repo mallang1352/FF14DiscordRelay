@@ -36,6 +36,33 @@ Self-contained ZIP 배포본은 .NET 런타임을 포함합니다. ZIP 압축을
 %APPDATA%\FF14DiscordRelay\config.enc
 ```
 
+### Discord Webhook URL 만드는 방법
+
+Webhook URL은 Discord 채널로 메시지를 보낼 수 있는 전용 주소입니다. 이
+주소를 가진 사람은 해당 채널에 메시지를 보낼 수 있으므로 외부에 공개하지
+마세요.
+
+1. Discord에서 메시지를 받을 서버를 엽니다.
+2. 메시지를 받을 채널을 고릅니다.
+3. 채널 이름 옆의 톱니바퀴 또는 `채널 편집`을 엽니다.
+4. 왼쪽 메뉴에서 `연동` 또는 `Integrations`를 선택합니다.
+5. `웹후크` 또는 `Webhooks`를 선택합니다.
+6. `새 웹후크` 또는 `New Webhook`을 누릅니다.
+7. 웹후크 이름을 정합니다. 예: `FF14 Discord Relay`
+8. 메시지를 보낼 채널이 맞는지 확인합니다.
+9. `웹후크 URL 복사` 또는 `Copy Webhook URL`을 누릅니다.
+10. 복사한 URL을 FF14 Discord Relay의 `Webhook` 입력칸에 붙여넣습니다.
+11. `테스트` 버튼을 눌러 Discord 채널에 테스트 메시지가 오는지 확인합니다.
+
+Webhook 메뉴가 보이지 않는다면 다음을 확인하세요.
+
+- 해당 서버에서 `웹후크 관리` 권한이 있는지 확인합니다.
+- 개인 DM에는 Webhook을 만들 수 없습니다. 서버 채널에서 만들어야 합니다.
+- 서버 관리자가 Webhook 생성을 막아둔 경우 사용할 수 없습니다.
+
+Webhook URL은 비밀번호처럼 취급하세요. 실수로 공개했다면 Discord의
+Webhook 설정에서 기존 Webhook을 삭제하고 새로 만들어야 합니다.
+
 ### 동작 방식
 
 - 이 프로그램은 Discord 클라이언트를 후킹하지 않습니다.

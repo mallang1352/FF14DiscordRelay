@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\app_icon.ico</ApplicationIcon>
+    <AssemblyName>FF14DiscordRelay</AssemblyName>
+    <AssemblyTitle>FF14 Discord Relay</AssemblyTitle>
+    <Product>FF14 Discord Relay</Product>
+    <Description>FF14 Discord Relay</Description>
+    <Company>FF14 Discord Relay</Company>
+    <Authors>FF14 Discord Relay</Authors>
+    <Version>1.0.8</Version>
+    <FileVersion>1.0.8.0</FileVersion>
+    <AssemblyVersion>1.0.8.0</AssemblyVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\app_icon.ico" />
+    <EmbeddedResource Include="Assets\app_icon.png" />
+  </ItemGroup>
+
+  <Target Name="CreateVersionedPortableExe" AfterTargets="Publish" Condition="'$(PublishSingleFile)' == 'true' and Exists('$(PublishDir)$(AssemblyName).exe')">
+    <Copy SourceFiles="$(PublishDir)$(AssemblyName).exe"
+          DestinationFiles="$(PublishDir)$(AssemblyName)-v$(Version).exe"
+          SkipUnchangedFiles="true" />
+  </Target>
+
+</Project>

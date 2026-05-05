@@ -16,23 +16,32 @@ GitHub 저장소의 `Releases` 페이지에서 최신 버전 ZIP 파일을 다�
 현재 배포 버전:
 
 ```text
-v1.0.8
+v1.0.9
 ```
 
 권장 다운로드 파일:
 
 ```text
-FF14DiscordRelay-v1.0.8-win-x64.zip
+FF14DiscordRelay-v1.0.9-win-x64.zip
 ```
 
 SHA256:
 
 ```text
-F48918DFD854FE360C69A28A60E4575C7334CEDEDE3355CFAC605118926BB357
+611217BC57E8B5DE30856B85F4A944F06FFA0FE8F5986F7EE2299D125C0A5152
 ```
 
 ZIP 파일을 받은 뒤 압축을 풀고, 폴더 안의 `FF14DiscordRelay.exe`를
 실행하세요. exe 파일만 따로 꺼내서 실행하지 마세요.
+
+### 업데이트 안내
+
+프로그램 실행 시 GitHub Releases의 최신 버전을 확인합니다. 현재 설치된
+버전보다 새 버전이 있으면 다운로드 페이지를 열지 물어봅니다.
+
+업데이트 파일을 자동으로 다운로드하거나 자동 실행하지는 않습니다. 안내가
+나오면 GitHub Release 페이지에서 ZIP 파일을 직접 다운로드한 뒤 기존
+폴더를 새 버전 폴더로 교체해 주세요.
 
 ### 준비물
 

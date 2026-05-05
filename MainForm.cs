@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing.Drawing2D;
 using System.Security.Cryptography;
 using System.Text;
@@ -151,6 +152,7 @@ public sealed class MainForm : Form
     {
         base.OnShown(e);
         QueueChannelListScroll();
+        _ = CheckForUpdatesAsync();
     }
 
     protected override void WndProc(ref Message m)
@@ -174,6 +176,37 @@ public sealed class MainForm : Form
 
         ShowFromTray();
         AppendLog(K("6riw7KG0IOyLpO2WiSDssL3snYQg7Je07JeI7Iq164uI64ukLg=="));
+    }
+
+    private async Task CheckForUpdatesAsync()
+    {
+        try
+        {
+            var update = await GitHubUpdateChecker.CheckAsync(CancellationToken.None);
+            if (update is null || IsDisposed)
+                return;
+
+            AppendLog($"{K("7IOIIOuyhOyghCDtmZXsnbg6IA==")}{update.LatestVersion}");
+
+            var message =
+                $"{K("7IOIIOuyhOyghOydtCDsnojsirXri4jri6Qu")}\n\n" +
+                $"{K("7ZiE7J6sIOuyhOyghDog")}{update.CurrentVersion}\n" +
+                $"{K("7LWc7IugIOuyhOyghDog")}{update.LatestVersion}\n\n" +
+                K("R2l0SHViIOuLpOyatOuhnOuTnCDtjpjsnbTsp4Drpbwg7Je06rmM7JqUPw==");
+
+            if (MessageBox.Show(message, AppIdentity.DisplayName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) != DialogResult.Yes)
+                return;
+
+            var url = string.IsNullOrWhiteSpace(update.ReleasePageUrl) ? update.DownloadUrl : update.ReleasePageUrl;
+            if (string.IsNullOrWhiteSpace(url))
+                return;
+
+            Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+        }
+        catch (Exception ex)
+        {
+            AppendLog($"{K("7JeF642w7J207Yq4IO2ZleyduCDsi6TtjKg6IA==")}{ex.Message}");
+        }
     }
 
     private Control BuildLayout()
